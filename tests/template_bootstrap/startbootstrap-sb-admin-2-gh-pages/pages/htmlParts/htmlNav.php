@@ -15,7 +15,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Gestion formation cours</a>
+        <a class="navbar-brand" href="dashboard.php">Gestion formation cours</a>
     </div>
     <!-- /.navbar-header -->
 
@@ -35,16 +35,16 @@
                     <!-- /input-group -->
                 </li>
                 <li>
-                    <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    <a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Les cours<span class="fa arrow"></span></a>
+                    <a href="lesson.php"><i class="fa fa-bar-chart-o fa-fw"></i> Les cours<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="flot.html">Cours 1</a>
+                            <a href="showLessonInformations.php">Cours 10</a>
                         </li>
                         <li>
-                            <a href="morris.html">Cours 2</a>
+                            <a href="showLessonInformations.php">Cours 2</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
