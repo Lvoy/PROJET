@@ -1,0 +1,82 @@
+AFFICHE LES FORMATIONS:
+SELECT * FROM t_cours,t_formation,t_lieuformation WHERE t_cours.id_lieu=t_lieuformation.id_lieu AND t_cours.id_formation=t_formation.id_formation;
+
+
+RECUPERER LES PROFS QUE DONNENT CHAQUE COURS
+SELECT * FROM donne_par,t_formateur,t_cours WHERE t_formateur.id_formateur=donne_par.id_formateur AND t_cours.id_cours=donne_par.id_cours;
+
+
+RECUPERE LES ELEVES AVEC QUELS COURS ILS SONT INSCRITS
+SELECT * FROM t_cours,t_inscriptioncours,t_eleve WHERE t_eleve.id_eleve=t_inscriptioncours.id_eleve AND t_cours.id_cours=t_inscriptioncours.id_cours;
+
+
+INSCRIPTION D'UN ELEVE A UN COURS
+INSERT INTO `db_formation`.`t_inscriptioncours` (`ins_dateEnvoiFacture`, `ins_datePaiement`, `ins_fraisTransport`, `id_eleve`, `id_cours`) VALUES ('?', '?', '?', '?', '?');
+
+
+AJOUT D'UN COURS
+INSERT INTO `db_formation`.`t_cours` (`id_cours`, `cou_nom`, `cou_dateDebut`, `cou_partie`, `cou_participantsMax`, `cou_horaire`, `cou_duree`, `cou_prixConcerne`, `cou_prixAutre`, `cou_presenceRemplie`, `cou_attestationTransmise`, `cou_remarque`, `cou_fraisRepasHebergement`, `id_lieu`, `id_formation`) VALUES (NULL, '?', '?', '?', '?', '?', '?', '?', '?', ?, ?, ?, '?', '?', '?');
+
+
+AFFICHAGE DES LIEUX DE FORMATION
+SELECT * FROM `t_lieuformation` ORDER BY le_etablissement;
+
+
+AFFICHAGE DES FORMATIONS
+SELECT * FROM `t_formation` ORDER BY for_nom;
+
+
+AFFICHAGE DES ELEVES (NOM, PRENOM) POUR FORMULAIRE
+SELECT id_eleve,ele_nom,ele_prenom FROM t_eleve ORDER BY ele_nom;
+
+
+AFFICHAGE DE TOUTES LES INFOS SUR LES ELEVES
+SELECT * FROM t_eleve,t_status WHERE t_eleve.id_status=t_status.id_status ORDER BY ele_nom;
+
+
+AJOUTER UN ELEVE 
+INSERT INTO `db_formation`.`t_eleve` (`id_eleve`, `ele_nom`, `ele_prenom`, `ele_avs`, `ele_telephone`, `ele_rue`, `ele_cp`, `ele_localite`, `ele_email`, `id_status`) VALUES (NULL, '?', '?', '?', '?', '?', '?', '?', '?', '?');
+
+
+AFFICHAGE DES STATUS ELEVES (POUR AJOUT ELEVE)
+SELECT * FROM `t_status` ORDER BY sta_nom;
+
+
+AJOUT D'UN FORMATEUR
+INSERT INTO `db_formation`.`t_formateur` (`id_formateur`, `for_nom`, `for_prenom`, `for_avs`, `for_competence`, `for_telephone`, `for_email`, `for_rue`, `for_cp`, `for_localite`) VALUES (NULL, '?', '?', '?', '?', '?', '?', '?', '?', '?');
+
+
+AJOUTER UN STATUS ELEVE
+INSERT INTO `db_formation`.`t_status` (`id_status`, `sta_nom`) VALUES (NULL, '?');
+
+
+RECUPERER LES STATUS PAR ELEVE
+SELECT * FROM t_eleve,t_status WHERE t_eleve.id_status=t_status.id_status;
+
+
+RECUPERER LES ELEVES INSCRITS A DES COURS AVEC TOUTES LEURS INFOS
+SELECT * FROM t_cours,t_inscriptioncours,t_eleve,t_status WHERE t_eleve.id_status=t_status.id_status AND t_inscriptioncours.id_eleve=t_eleve.id_eleve AND t_cours.id_cours=t_inscriptioncours.id_cours;
+
+
+RECUPERE TOUS LES FORMATEURS AVEC LES COURS QU'ILS DONNENT
+SELECT * FROM t_cours,donne_par,t_formateur WHERE t_cours.id_cours=donne_par.id_cours AND donne_par.id_formateur=t_formateur.id_formateur;
+
+
+AJOUTER UNE FORMATION
+INSERT INTO `db_formation`.`t_formation` (`id_formation`, `for_nom`) VALUES (NULL, '?');
+
+
+AJOUT D'UN LIEU DE FORMATION
+INSERT INTO `db_formation`.`t_lieuformation` (`id_lieu`, `lie_etablissement`, `lie_adresse`, `lie_cp`, `lie_localite`) VALUES (NULL, '?', '?', '?', '?');
+
+
+RECUPERER LES NOMS DES FORMATEURS (POUR FORMULAIRE AJOUT DE PROF A UN COURS)
+SELECT id_formateur,for_nom,for_prenom FROM t_formateur;
+
+
+RECUPERER LES NOM DES COURS (POUR FORMULAIRE AJOUT DE PROF A UN COURS)
+SELECT id_cours,cou_nom FROM t_cours;
+
+
+AJOUT D'UN FORMATEUR A UN COURS (ATTENTION, PAS DE DOUBLONS!!)
+INSERT INTO `db_formation`.`donne_par` (`id_cours`, `id_formateur`) VALUES ('?', '?');
