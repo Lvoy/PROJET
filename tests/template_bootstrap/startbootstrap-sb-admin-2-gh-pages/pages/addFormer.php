@@ -34,42 +34,42 @@ include "htmlParts/htmlNav.php";
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form role="form">
+                            <form role="form" action="requestDatabase.php?type=addFormer" method="post">
                                 <div class="form-group">
                                     <label for="lastname">Nom</label>
-                                    <input id="lastname" type="text" class="form-control">
+                                    <input id="lastname" type="text" class="form-control" name="lastname">
                                 </div>
                                 <div class="form-group">
                                     <label for="firstname">Prénom</label>
-                                    <input id="firstname" type="text" class="form-control">
+                                    <input id="firstname" type="text" class="form-control" name="firstname">
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input id="email" type="text" class="form-control">
+                                    <input id="email" type="text" class="form-control" name="email">
                                 </div>
                                 <div class="form-group">
                                     <label for="avs">Numéro AVS</label>
-                                    <input id="avs" type="number" class="form-control">
+                                    <input id="avs" type="number" class="form-control" name="avs">
                                 </div>
                                 <div class="form-group">
                                     <label for="skill">Compétence</label>
-                                    <input id="skill" type="text" class="form-control">
+                                    <input id="skill" type="text" class="form-control" name="skill">
                                 </div>
                                 <div class="form-group">
                                     <label for="phoneNbr">Numéro de téléphone</label>
-                                    <input id="phoneNbr" type="number" class="form-control">
+                                    <input id="phoneNbr" type="number" class="form-control" name="phoneNbr">
                                 </div>
                                 <div class="form-group">
                                     <label for="street">Rue</label>
-                                    <input id="street" type="text" class="form-control">
+                                    <input id="street" type="text" class="form-control" name="street">
                                 </div>
                                 <div class="form-group">
                                     <label for="postalCode">Code postal</label>
-                                    <input id="postalCode" type="number" class="form-control">
+                                    <input id="postalCode" type="number" class="form-control" name="postalCode">
                                 </div>
                                 <div class="form-group">
                                     <label for="locality">Localité</label>
-                                    <input id="locality" type="text" class="form-control">
+                                    <input id="locality" type="text" class="form-control" name="locality">
                                 </div>
                                 <button type="submit" class="btn btn-default">Submit Button</button>
                                 <button type="reset" class="btn btn-default">Reset Button</button>

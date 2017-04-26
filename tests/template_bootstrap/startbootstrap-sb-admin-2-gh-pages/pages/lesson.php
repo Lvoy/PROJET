@@ -20,7 +20,7 @@ include_once 'htmlParts/htmlNav.php';
             <div class="container-fluid">
                 <div class="row" style="float: left">
                     <div class="col-lg-12">
-                        <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" action="requestDatabase.php?type=addLesson" method="post" enctype="multipart/form-data">
                             <fieldset>
 
                                 <!-- Form Name -->
