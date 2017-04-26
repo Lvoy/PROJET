@@ -6,6 +6,10 @@
  * Time: 14:22
  */
 ?>
+<?php
+    include 'databaseDylan.php';
+    $database = new database();
+?>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
@@ -40,12 +44,17 @@
                 <li>
                     <a href="lesson.php"><i class="fa fa-bar-chart-o fa-fw"></i> Les cours<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li>
-                            <a href="showLessonInformations.php">Cours 10</a>
-                        </li>
-                        <li>
-                            <a href="showLessonInformations.php">Cours 2</a>
-                        </li>
+                        <?php
+                            foreach($database->getAllLessonsName() as $lesson){
+                                echo '<li>';
+                                foreach($lesson as $key=>$value){
+                                    if($key == 'id_cours'){
+                                        echo '<a href="showLessonInformations.php?id='.$value.'">'.$value.'</a>';
+                                    }
+                                }
+                                echo '</li>';
+                            }
+                        ?>
                     </ul>
                     <!-- /.nav-second-level -->
                 </li>

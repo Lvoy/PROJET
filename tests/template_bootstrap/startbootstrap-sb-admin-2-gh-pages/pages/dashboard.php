@@ -34,7 +34,7 @@ include_once 'htmlParts/htmlNav.php';
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="lesson.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Ajouter un cours</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -57,7 +57,7 @@ include_once 'htmlParts/htmlNav.php';
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        <a href="lesson.php">
                             <div class="panel-footer">
                                 <span class="pull-left">Voir les détails</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -81,7 +81,7 @@ include_once 'htmlParts/htmlNav.php';
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="addStudent.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Ajouter un élève</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -103,7 +103,7 @@ include_once 'htmlParts/htmlNav.php';
                                     </div>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="addFormer.php">
                                 <div class="panel-footer">
                                     <span class="pull-left">Ajouter un formateur</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
