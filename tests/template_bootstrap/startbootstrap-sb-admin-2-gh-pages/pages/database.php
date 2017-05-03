@@ -60,4 +60,54 @@ class database
         $request->execute();
         $request->closeCursor();
     }
+    function getAllLessonsName(){
+        $query = "SELECT id_cours FROM t_cours";
+        try {
+            $req = $this->connectToDatabase()->prepare($query);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $req->execute();
+        $table = $req->fetchAll(PDO::FETCH_ASSOC);
+        $req->closeCursor();
+        return $table;
+    }
+
+    function getAllLessonInformation($idLesson){
+        $query = "SELECT * FROM t_cours WHERE id_cours=$idLesson";
+        try {
+            $req = $this->connectToDatabase()->prepare($query);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $req->execute();
+        $table = $req->fetchAll(PDO::FETCH_ASSOC);
+        $req->closeCursor();
+        return $table;
+    }
+    function getAllFormationLocationInformation(){
+        $query = "SELECT * FROM t_lieuformation";
+        try {
+            $req = $this->connectToDatabase()->prepare($query);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $req->execute();
+        $table = $req->fetchAll(PDO::FETCH_ASSOC);
+        $req->closeCursor();
+        return $table;
+    }
+
+    function getAllFormationInformation(){
+        $query = "SELECT * FROM t_formation";
+        try {
+            $req = $this->connectToDatabase()->prepare($query);
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        $req->execute();
+        $table = $req->fetchAll(PDO::FETCH_ASSOC);
+        $req->closeCursor();
+        return $table;
+    }
 }

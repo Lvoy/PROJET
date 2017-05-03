@@ -7,7 +7,7 @@
  */
 ?>
 <?php
-    include 'databaseDylan.php';
+    include 'database.php';
     $database = new database();
 ?>
 <!-- Navigation -->
