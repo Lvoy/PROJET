@@ -57,10 +57,11 @@
                     $id_lieu = $value;
                 }
                 if($key == 'id_formation'){
-                    $id_lieu = $value;
+                    $id_formation = $value;
                 }
             }
         }
+
     ?>
 
     <div id="page-wrapper">
@@ -154,9 +155,22 @@
                                     <label class="col-md-4 control-label" for="id_lieu">Lieu de formation</label>
                                     <div class="col-md-4">
                                         <select name="id_lieu" id="id_lieu" class="form-control input-md">
-                                            <?php foreach($lol as $lol)?>
-                                            <option>ETML</option>
-                                            <option>Eracom</option>
+                                            <?php
+                                            foreach($database->getAllFormationLocationInformation() as $formationLocation){
+                                                foreach($formationLocation as $key=>$value){
+                                                    if($key == 'id_lieu'){
+                                                        echo "<option value='.$value.' ";
+                                                        if($value == $id_lieu){
+                                                            echo "selected";
+                                                        }
+                                                        echo ">";
+                                                    }
+                                                    if($key == 'lie_etablissement'){
+                                                        echo $value.'</option>';
+                                                    }
+                                                }
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
@@ -164,10 +178,22 @@
                                     <label class="col-md-4 control-label" for="id_formation">Type de formation</label>
                                     <div class="col-md-4">
                                         <select name="id_formation" id="id_formation" class="form-control input-md">
-                                            <?php foreach($lol as $lol)?>
-                                            <option>Interne</option>
-                                            <option>Externe</option>
-                                            <option>Congrès</option>
+                                            <?php
+                                            foreach($database->getAllFormationInformation() as $formationInformation){
+                                                foreach($formationInformation as $key=>$value){
+                                                    if($key == 'id_formation'){
+                                                        echo "<option value='.$value.' ";
+                                                        if($value == $id_formation){
+                                                            echo "selected";
+                                                        }
+                                                        echo ">";
+                                                    }
+                                                    if($key == 'for_nom'){
+                                                        echo $value.'</option>';
+                                                    }
+                                                }
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
