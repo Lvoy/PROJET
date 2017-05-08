@@ -6,10 +6,9 @@
     <?php
         include_once 'htmlParts/htmlHeader.php';
     ?>
-
 </head>
 
-<body>
+<body onLoad="pageScrollDown()">
 <?php
 include_once 'htmlParts/htmlNav.php';
 ?>
@@ -34,7 +33,7 @@ include_once 'htmlParts/htmlNav.php';
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="cou_partie">Nombre de partie du cours</label>
+                                    <label class="test" class="col-md-4 control-label" for="cou_partie">Nombre de partie du cours</label>
                                     <div class="col-md-5">
                                         <input id="cou_partie" name="cou_partie" placeholder="2" class="form-control input-md"  type="number" value="">
                                     </div>
@@ -42,7 +41,7 @@ include_once 'htmlParts/htmlNav.php';
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="cou_participantsMax">Nombre d'élèves maximum</label>
                                     <div class="col-md-5">
-                                        <input id="cou_participantsMax" name="cou_participantsMax" placeholder="20" class="form-control input-md"  type="number" value="">
+                                        <input class="test" id="cou_participantsMax" name="cou_participantsMax" placeholder="20" class="form-control input-md"  type="number" value="">
                                     </div>
                                 </div>
                                 <div class="form-group">

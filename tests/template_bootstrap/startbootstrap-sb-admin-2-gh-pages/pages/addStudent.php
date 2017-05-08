@@ -12,7 +12,7 @@
     include "htmlParts/htmlHeader.php";
     ?>
 </head>
-<body>
+<body onLoad="pageScrollDown()">
 <?php
 include "htmlParts/htmlNav.php";
 ?>

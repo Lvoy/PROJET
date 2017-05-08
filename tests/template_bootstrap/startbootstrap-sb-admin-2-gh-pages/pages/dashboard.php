@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body onLoad="pageScrollDown()">
 <?php
 include_once 'htmlParts/htmlNav.php';
 ?>

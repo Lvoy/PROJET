@@ -11,7 +11,7 @@
     $database = new database();
 ?>
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0" onload="pageScrollUp()">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -42,7 +42,10 @@
                     <a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="lesson.php"><i class="fa fa-bar-chart-o fa-fw"></i> Les cours<span class="fa arrow"></span></a>
+                    <a href="lesson.php"><i class="fa fa-dashboard fa-fw"></i> Ajouter un cours</a>
+                </li>
+                <li>
+                    <a style="cursor: pointer"><i class="fa fa-bar-chart-o fa-fw"></i> Liste des cours<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <?php
                             foreach($database->getAllLessonsName() as $lesson){
