@@ -1,0 +1,6 @@
+body{
+    cursor: url("../../../pages/macron2.png")42 10, auto;
+}
+a,input,label {
+    cursor: url("../../../pages/lepen.png")46 10, auto;
+}
