@@ -82,7 +82,7 @@
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                            <form class="form-horizontal" action="requestDatabase.php?type=updateLesson&amp;id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data">
                             <fieldset>
                                 <!-- Text input-->
                                 <div class="form-group">
@@ -159,7 +159,7 @@
                                             foreach($database->getAllFormationLocationInformation() as $formationLocation){
                                                 foreach($formationLocation as $key=>$value){
                                                     if($key == 'id_lieu'){
-                                                        echo "<option value='.$value.' ";
+                                                        echo "<option value='$value' ";
                                                         if($value == $id_lieu){
                                                             echo "selected";
                                                         }
@@ -182,7 +182,7 @@
                                             foreach($database->getAllFormationInformation() as $formationInformation){
                                                 foreach($formationInformation as $key=>$value){
                                                     if($key == 'id_formation'){
-                                                        echo "<option value='.$value.' ";
+                                                        echo "<option value='$value' ";
                                                         if($value == $id_formation){
                                                             echo "selected";
                                                         }
@@ -199,7 +199,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-lg-offset-10">
-                                        <input type="submit" value="Modifier" id="addNewTeacher" class="btn btn-block btn-primary">
+                                        <input type="submit" value="Modifier" id="updateLesson" class="btn btn-block btn-primary">
                                     </div>
                                 </div>
                             </fieldset>
@@ -213,7 +213,6 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-6">
@@ -233,6 +232,15 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                foreach($database->getAllStudentsInThisLesson($_Get['id']) as $student){
+                                    echo '<tr>';
+                                    foreach($student as $key=>$value){
+
+                                    }
+                                    echo '</tr>';
+                                }
+                                ?>
                                 <tr>
                                     <td>Mark</td>
                                     <td>Otto</td>
