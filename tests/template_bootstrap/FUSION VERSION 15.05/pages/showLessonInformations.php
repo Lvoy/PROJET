@@ -4,89 +4,89 @@
  * User: rodriguedy
  * Date: 05.04.2017
  * Time: 14:44
- * Description: Page qui affiche les différents cours
+ * Description: Page qui affiche les diffÃ©rents cours
  */
 ?>
 <head>
     <?php
-        include "htmlParts/htmlHeader.php";
+    include "htmlParts/htmlHeader.php";
     ?>
 </head>
 <body onLoad="pageScrollDown()">
-    <?php
-        include "htmlParts/htmlNav.php";
-        foreach($database->getAllLessonInformation($_GET['id']) as $lesson){
-            foreach($lesson as $key=>$value){
-                if($key == 'id_cours'){
-                    $id_cours = $value;
-                }
-                if($key == 'cou_dateDebut'){
-                    $cou_dateDebut = $value;
-                }
-                if($key == 'cou_partie'){
-                    $cou_partie = $value;
-                }
-                if($key == 'cou_participantsMax'){
-                    $cou_participantsMax = $value;
-                }
-                if($key == 'cou_horaire'){
-                    $cou_horaire = $value;
-                }
-                if($key == 'cou_duree'){
-                    $cou_duree = $value;
-                }
-                if($key == 'cou_prixConcerne'){
-                    $cou_prixConcerne = $value;
-                }
-                if($key == 'cou_prixAutre'){
-                    $cou_prixAutre = $value;
-                }
-                if($key == 'cou_presenceRemplie'){
-                    $cou_presenceRemplie = $value;
-                }
-                if($key == 'cou_attestationTransmise'){
-                    $cou_attestationTransmise = $value;
-                }
-                if($key == 'cou_remarque'){
-                    $cou_remarque = $value;
-                }
-                if($key == 'cou_fraisRepasHebergement'){
-                    $cou_fraisRepasHebergement = $value;
-                }
-                if($key == 'id_lieu'){
-                    $id_lieu = $value;
-                }
-                if($key == 'id_formation'){
-                    $id_formation = $value;
-                }
-            }
+<?php
+include "htmlParts/htmlNav.php";
+foreach($database->getAllLessonInformation($_GET['id']) as $lesson){
+    foreach($lesson as $key=>$value){
+        if($key == 'id_cours'){
+            $id_cours = $value;
         }
+        if($key == 'cou_dateDebut'){
+            $cou_dateDebut = $value;
+        }
+        if($key == 'cou_partie'){
+            $cou_partie = $value;
+        }
+        if($key == 'cou_participantsMax'){
+            $cou_participantsMax = $value;
+        }
+        if($key == 'cou_horaire'){
+            $cou_horaire = $value;
+        }
+        if($key == 'cou_duree'){
+            $cou_duree = $value;
+        }
+        if($key == 'cou_prixConcerne'){
+            $cou_prixConcerne = $value;
+        }
+        if($key == 'cou_prixAutre'){
+            $cou_prixAutre = $value;
+        }
+        if($key == 'cou_presenceRemplie'){
+            $cou_presenceRemplie = $value;
+        }
+        if($key == 'cou_attestationTransmise'){
+            $cou_attestationTransmise = $value;
+        }
+        if($key == 'cou_remarque'){
+            $cou_remarque = $value;
+        }
+        if($key == 'cou_fraisRepasHebergement'){
+            $cou_fraisRepasHebergement = $value;
+        }
+        if($key == 'id_lieu'){
+            $id_lieu = $value;
+        }
+        if($key == 'id_formation'){
+            $id_formation = $value;
+        }
+    }
+}
 
-    ?>
+?>
 
-    <div id="page-wrapper">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Cours(<?php echo $id_cours;?>)</h1>
-            </div>
-            <!-- /.col-lg-12 -->
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cours(<?php echo $id_cours;?>)</h1>
         </div>
+        <!-- /.col-lg-12 -->
+    </div>
 
 
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        modifier un cours
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <form class="form-horizontal" action="requestDatabase.php?type=updateLesson&amp;id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    modifier un cours
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <form class="form-horizontal" action="requestDatabase.php?type=updateLesson&amp;id=<?php echo $_GET['id'];?>" method="post" enctype="multipart/form-data">
                             <fieldset>
                                 <!-- Text input-->
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="cou_dateDebut">Date de début du cours</label>
+                                    <label class="col-md-4 control-label" for="cou_dateDebut">Date de dÃ©but du cours</label>
                                     <div class="col-md-5">
                                         <input id="cou_dateDebut" name="cou_dateDebut" placeholder="12.05.2017" class="form-control input-md"  type="date" value="<?php echo $cou_dateDebut;?>">
                                     </div>
@@ -98,25 +98,25 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="cou_participantsMax">Nombre d'élèves maximum</label>
+                                    <label class="col-md-4 control-label" for="cou_participantsMax">Nombre d'Ã©lÃ¨ves maximum</label>
                                     <div class="col-md-5">
                                         <input id="cou_participantsMax" name="cou_participantsMax" placeholder="20" class="form-control input-md"  type="number" value="<?php echo $cou_participantsMax;?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="cou_horaire">Horaire de début</label>
+                                    <label class="col-md-4 control-label" for="cou_horaire">Horaire de dÃ©but</label>
                                     <div class="col-md-5">
                                         <input id="cou_horaire" name="cou_horaire" placeholder="13:10" class="form-control input-md"  type="time" value="<?php echo $cou_horaire;?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="cou_duree">Durée du cours en heures</label>
+                                    <label class="col-md-4 control-label" for="cou_duree">DurÃ©e du cours en heures</label>
                                     <div class="col-md-5">
                                         <input id="cou_duree" name="cou_duree" placeholder="4" class="form-control input-md"  type="number" value="<?php echo $cou_duree;?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="cou_prixConcerne">Prix pour les personnes concerné</label>
+                                    <label class="col-md-4 control-label" for="cou_prixConcerne">Prix pour les personnes concernÃ©</label>
                                     <div class="col-md-5">
                                         <input id="cou_prixConcerne" name="cou_prixConcerne" placeholder="500" class="form-control input-md"  type="number" value="<?php echo $cou_prixConcerne;?>">
                                     </div>
@@ -128,7 +128,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="cou_presenceRemplie">Présence remplie</label>
+                                    <label class="col-md-4 control-label" for="cou_presenceRemplie">PrÃ©sence remplie</label>
                                     <div class="col-md-5">
                                         <input id="cou_presenceRemplie" name="cou_presenceRemplie" <?php if($cou_presenceRemplie != ""){echo 'checked';}?> type="checkbox" value="ok" > ok
                                     </div>
@@ -146,7 +146,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="cou_fraisRepasHebergement">Prix pour les repas et hébergement</label>
+                                    <label class="col-md-4 control-label" for="cou_fraisRepasHebergement">Prix pour les repas et hÃ©bergement</label>
                                     <div class="col-md-5">
                                         <input id="cou_fraisRepasHebergement" name="cou_fraisRepasHebergement" placeholder="150" class="form-control input-md"  type="number" value="<?php echo $cou_fraisRepasHebergement;?>">
                                     </div>
@@ -204,120 +204,119 @@
                                 </div>
                             </fieldset>
                         </form>
-                        </div>
-                        <!-- /.table-responsive -->
                     </div>
+                    <!-- /.table-responsive -->
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Liste des Ã©lÃ¨ves du cours
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>PrÃ©nom</th>
+                                <th>email</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach($database->getAllStudentsInThisLesson($_GET['id']) as $student){
+                                echo '<tr>';
+                                foreach($student as $key=>$value){
+                                    if($key == 'ele_nom'){
+                                        echo '<td>'.$value.'</td>';
+                                    }
+                                    if($key == 'ele_prenom'){
+                                        echo '<td>'.$value.'</td>';
+                                    }
+                                    if($key == 'ele_email'){
+                                        echo '<td>'.$value.'</td>';
+                                    }
+                                    if($key == 'id_eleve'){
+                                        $idEleve = $value;
+                                    }
+                                }
+                                echo '<td><button type="button" value="'.$idEleve.'" class="btn btn-danger">Enlever</button></td>';
+                                echo '</tr>';
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
                 </div>
                 <!-- /.panel-body -->
             </div>
-            <!-- /.col-lg-12 -->
+            <!-- /.panel -->
         </div>
-        <!-- /.row -->
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Liste des élèves du cours
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Prénom</th>
-                                    <th>email</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                foreach($database->getAllStudentsInThisLesson($_Get['id']) as $student){
-                                    echo '<tr>';
-                                    foreach($student as $key=>$value){
-                                    }
-                                    echo '</tr>';
-                                }
-                                ?>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td><button type="button" class="btn btn-danger">Enlever</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td><button type="button" class="btn btn-danger">Enlever</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    <td><button type="button" class="btn btn-danger">Enlever</button></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.table-responsive -->
-                    </div>
-                    <!-- /.panel-body -->
-                </div>
-                <!-- /.panel -->
-            </div>
-            <!-- /.col-lg-6 -->
-        </div>
+        <!-- /.col-lg-6 -->
+    </div>
 
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Ajouter un élève au cours
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Prénom</th>
-                                    <th>email</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td><button type="button" class="btn btn-success">Ajouter</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td><button type="button" class="btn btn-success">Ajouter</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    <td><button type="button" class="btn btn-success">Ajouter</button></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- /.table-responsive -->
-                    </div>
-                    <!-- /.panel-body -->
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Ajouter un Ã©lÃ¨ve au cours
                 </div>
-                <!-- /.panel -->
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>PrÃ©nom</th>
+                                <th>email</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach($database->getAllStudentsNotInThisLesson($_GET['id']) as $student){
+                                echo '<tr>';
+                                foreach($student as $key=>$value){
+                                    if($key == 'ele_nom'){
+                                        echo '<td>'.$value.'</td>';
+                                    }
+                                    if($key == 'ele_prenom'){
+                                        echo '<td>'.$value.'</td>';
+                                    }
+                                    if($key == 'ele_email'){
+                                        echo '<td>'.$value.'</td>';
+                                    }
+                                    if($key == 'id_eleve'){
+                                        $idEleve = $value;
+                                    }
+                                }
+                                echo '<td><button type="button" onclick="window.open(\'addInLesson.php?idCours='.$_GET['id'].'&amp;idEleve='.$idEleve.'\',\'Ajouter Ã©lÃ¨ve au cours\',\'width=400,height=200\')" class="btn btn-success">Ajouter</button></td>';
+                                echo '</tr>';
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
             </div>
-            <!-- /.col-lg-6 -->
+            <!-- /.panel -->
         </div>
-        <!-- /.row -->
+        <!-- /.col-lg-6 -->
+    </div>
+    <!-- /.row -->
     <!-- /#page-wrapper -->
 </body>
+
